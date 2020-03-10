@@ -1,74 +1,74 @@
-*** Comment se décompose ce répertoire ? ***
+*** Comment se dÃ©compose ce rÃ©pertoire ? ***
 
-Ce répertoire contient 3 dossiers :
+Ce rÃ©pertoire contient 2 dossiers :
 
 - Dossier de travail : Ce dossier contient :
-		       Les notebooks de nettoyage des données, d'analyse supervisée et d'analyse non supervisée.
-		       Un fichier de fonctions personnalisées nécessaire au fonctionnement des notebooks
-		       Le script utilisé pour la collecte des données depuis l'API StackExchange
+		       Les notebooks de nettoyage des donnÃ©es, d'analyse supervisÃ©e et d'analyse non supervisÃ©e.
+		       Un fichier de fonctions personnalisÃ©es nÃ©cessaire au fonctionnement des notebooks
+		       Le script utilisÃ© pour la collecte des donnÃ©es depuis l'API StackExchange
 
-- Démo : Contient tous les éléments (notebook, modèles, ressources) nécessaires pour tester les modèles issus de l'étude
+- DÃ©mo : Contient tous les Ã©lÃ©ments (notebook, modÃ¨les, ressources) nÃ©cessaires pour tester les modÃ¨les issus de l'Ã©tude
 
 
 
-*** Comment utiliser ce répertoire ? ***
+*** Comment utiliser ce rÃ©pertoire ? ***
 
-Pour tester les modèles :
+Pour tester les modÃ¨les :
 
-Se rendre dans le répertoire 'Démo' et ouvrir le notebook 'Tags_suggestion_demo'.
+Se rendre dans le rÃ©pertoire 'DÃ©mo' et ouvrir le notebook 'Tags_suggestion_demo'.
 Suivre ensuite les instructions du notebook.
-Le notebook téléchargera les données issues de stackoverflow sur la journée renseignée et les sauvegardera une fois nettoyées.
+Le notebook tÃ©lÃ©chargera les donnÃ©es issues de stackoverflow sur la journÃ©e renseignÃ©e et les sauvegardera une fois nettoyÃ©es.
 
-Les librairies nécessaires sont indiquées au début du fichier 'functions_demo'.
-A noter que pour la partie nettoyage, les librairies suivantes sont nécessaires :
+Les librairies nÃ©cessaires sont indiquÃ©es au dÃ©but du fichier 'functions_demo'.
+A noter que pour la partie nettoyage, les librairies suivantes sont nÃ©cessaires :
 
 - NLTK : utilisation pour retrait stopwords et tokenisation. 
-         (si les modules nécessaires ne sont pas installés, le message d'erreur indiquera la procédure d'installation)
+         (si les modules nÃ©cessaires ne sont pas installÃ©s, le message d'erreur indiquera la procÃ©dure d'installation)
 - Spacy : utilisation pour la lemmatisation et retrait POS.
-	  Le module 'en_core_web_lg' doit être téléchargé.
+	  Le module 'en_core_web_lg' doit Ãªtre tÃ©lÃ©chargÃ©.
 
-Egalement, les fichiers .joblib des modèles ont été réalisés avec les versions de librairies
-suivantes, et il est nécessaire d'avoir les mêmes dans l'environnement de travail :
+Egalement, les fichiers .joblib des modÃ¨les ont Ã©tÃ© rÃ©alisÃ©s avec les versions de librairies
+suivantes, et il est nÃ©cessaire d'avoir les mÃªmes dans l'environnement de travail :
 - Python 3.7.5
 - joblib 0.14.0
 - Numpy 1.17.3
 - Scikit Learn 0.21.3
 
-Pour tester la démarche en entier :
+Pour tester la dÃ©marche en entier :
 
-** Attention les résultats peuvent être différents de ceux obtenus dans les notebooks au format HTML **
-** car les données, même prises sur la même période peuvent évoluer (Edition, acceptation réponse ...) **
+** Attention les rÃ©sultats peuvent Ãªtre diffÃ©rents de ceux obtenus dans les notebooks au format HTML **
+** car les donnÃ©es, mÃªme prises sur la mÃªme pÃ©riode peuvent Ã©voluer (Edition, acceptation rÃ©ponse ...) **
 
-Se rendre dans le dossier 'Répertoire de travail':
+Se rendre dans le dossier 'RÃ©pertoire de travail':
 
-- Lancer le script 'stackoverflow_data_collect'. Pensez à insérer votre clé dans la requête afin de ne pas atteindre la limite journalière de requêtes
+- Lancer le script 'stackoverflow_data_collect'. Pensez Ã  insÃ©rer votre clÃ© dans la requÃªte afin de ne pas atteindre la limite journaliÃ¨re de requÃªtes
 
-Cela ira collecter les données auprès de l'API StackExchange et les sauvegardera dans une fichier .csv 'data_stackoverflow_july_october'
-A noter que cette opération peut prendre du temps.
+Cela ira collecter les donnÃ©es auprÃ¨s de l'API StackExchange et les sauvegardera dans une fichier .csv 'data_stackoverflow_july_october'
+A noter que cette opÃ©ration peut prendre du temps.
 
-- Ouvrir le notebook 'Nettoyage_VF', décommenter les lignes de sauvegarde des fichiers et l'éxécuter.
+- Ouvrir le notebook 'Nettoyage_VF', dÃ©commenter les lignes de sauvegarde des fichiers et l'Ã©xÃ©cuter.
 
-Cela prendra en entrée les données téléchargées à l'étape précédente et les nettoiera.
-Plusieurs fichiers seront sauvegardés au format .csv à cette étape :
-- Les données nettoyées : 'cleaned_dataset'
+Cela prendra en entrÃ©e les donnÃ©es tÃ©lÃ©chargÃ©es Ã  l'Ã©tape prÃ©cÃ©dente et les nettoiera.
+Plusieurs fichiers seront sauvegardÃ©s au format .csv Ã  cette Ã©tape :
+- Les donnÃ©es nettoyÃ©es : 'cleaned_dataset'
 - Une liste de tags : 'most_common_tags'
-- Une liste de mots à retirer : 'words_to_remove'
+- Une liste de mots Ã  retirer : 'words_to_remove'
 
-- Ouvrir le notebook 'modèle_supervisé', décommenter les lignes de sauvegarde des fichiers et l'éxécuter.
+- Ouvrir le notebook 'modÃ¨le_supervisÃ©', dÃ©commenter les lignes de sauvegarde des fichiers et l'Ã©xÃ©cuter.
 
-Cela générera toute l'étude supervisée et sauvegardera le modèle supervisé 'SGDC_supervised_Model.joblib'
+Cela gÃ©nÃ©rera toute l'Ã©tude supervisÃ©e et sauvegardera le modÃ¨le supervisÃ© 'SGDC_supervised_Model.joblib'
 
-- Ouvrir le notebook 'modèle non supervisé', décommenter les lignes de sauvegarde des fichiers et l'éxécuter.
+- Ouvrir le notebook 'modÃ¨le non supervisÃ©', dÃ©commenter les lignes de sauvegarde des fichiers et l'Ã©xÃ©cuter.
 
-Cela générera toute l'étude non supervisée et sauvegardera plusieurs modèles :
-- Les résultats en sortie d'étude non supervisée (lda_model.json et nmf_model.json)
-- Les modèles supervisés issus des cibles LDA et NMF ('SGDC_LDA_Model.joblib' et 'SGDC_NMF_Model.joblib')
+Cela gÃ©nÃ©rera toute l'Ã©tude non supervisÃ©e et sauvegardera plusieurs modÃ¨les :
+- Les rÃ©sultats en sortie d'Ã©tude non supervisÃ©e (lda_model.json et nmf_model.json)
+- Les modÃ¨les supervisÃ©s issus des cibles LDA et NMF ('SGDC_LDA_Model.joblib' et 'SGDC_NMF_Model.joblib')
 
 
 
-*** Quelles sont les librairies / modules nécessaires ? ***
+*** Quelles sont les librairies / modules nÃ©cessaires ? ***
 
-Manipulation des données:
+Manipulation des donnÃ©es:
 Pandas
 Numpy
 scipy
